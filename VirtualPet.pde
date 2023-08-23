@@ -4,7 +4,7 @@ size(500,500);
 }
 void draw()
 {
-System.out.println(mouseX + " " + mouseY);
+
 background(#A0CBFF);
 //top fins
 fill(#03AA36);
