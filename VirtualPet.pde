@@ -1,11 +1,20 @@
-void setup()
-{
-size(500,500);
-}
-void draw()
-{
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
 
+void setup(){
+size(500,500);
+ arduino = new Arduino(this, Arduino.list()[0], 57600);
+}
+void draw(){
+System.out.println(mouseX + " " + mouseY);
 background(#A0CBFF);
+int y = arduino.analogRead(5);
+if(y<170)
+  y=170;
+  System.out.println(y);
+  fill(#674415);
+  ellipse(250, 2*y, 30, 30);
 //top fins
 fill(#03AA36);
 arc(375,230,150,100,PI,2*PI, CHORD);
